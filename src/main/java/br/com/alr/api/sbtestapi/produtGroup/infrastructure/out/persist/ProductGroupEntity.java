@@ -1,7 +1,10 @@
 package br.com.alr.api.sbtestapi.produtGroup.infrastructure.out.persist;
 
+import br.com.alr.api.sbtestapi.product.infrastructure.out.persist.ProductEntity;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(
@@ -18,13 +21,16 @@ public class ProductGroupEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Integer id;
 
   @Column(length = 100, nullable = false)
   private String name;
 
   @Column
   private Boolean enabled;
+
+  @OneToMany(mappedBy = "productGroup", fetch = FetchType.LAZY)
+  private List<ProductEntity> products;
 
   @PrePersist
   public void prePersist() {
