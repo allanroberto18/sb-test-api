@@ -1,10 +1,7 @@
 package br.com.alr.api.sbtestapi.produtGroup.infrastructure.out.persist;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(
@@ -15,8 +12,8 @@ import lombok.NoArgsConstructor;
 )
 @Getter
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProductGroupEntity {
 
   @Id
