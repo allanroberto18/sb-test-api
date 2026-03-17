@@ -4,4 +4,4 @@ CREATE TABLE IF NOT EXISTS products_groups (
     enabled BOOLEAN DEFAULT TRUE
 );
 
-CREATE INDEX IF NOT EXISTS products_groups_name_idx ON products_groups (name);
+CREATE UNIQUE INDEX IF NOT EXISTS products_groups_name_idx ON products_groups (name);
