@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProductGroup {
 
-  private Long id;
+  private Integer id;
   private String name;
   private Boolean enabled;
 
@@ -19,7 +19,7 @@ public class ProductGroup {
         .build();
   }
 
-  public static ProductGroup createInstance(final Long id, final String name, final Boolean enabled) {
+  public static ProductGroup createInstance(final Integer id, final String name, final Boolean enabled) {
     return ProductGroup.builder()
         .id(id)
         .name(name)
